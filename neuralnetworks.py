@@ -13,6 +13,11 @@ class nn:
     def forward_nn(self,inputs):
         self.outputs = np.dot(inputs,self.weights) + self.biases
 
+class activation_relu:
+    def forward(self,inputs):
+        self.outputs = np.maximum(0,inputs)
+
+
 
 layer1 = nn(3,4)
 layer1.forward_nn(inputs)
@@ -21,3 +26,8 @@ print(layer1.outputs)
 layer2 = nn(4,3)
 layer2.forward_nn(layer1.outputs)
 print(layer2.outputs)
+
+
+activation1 = activation_relu()
+activation1.forward(layer2.outputs)
+print(activation1.outputs)
