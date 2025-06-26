@@ -1,9 +1,5 @@
 import numpy as np
 
-
-
-
-
 class nn:
     def __init__(self,inputs,neurons):
         self.weights = 0.1*np.random.rand(inputs,neurons)
